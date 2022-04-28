@@ -1,9 +1,7 @@
 package utils;
 
 
-import entities.Customer;
-import entities.Role;
-import entities.User;
+import entities.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -24,7 +22,19 @@ public class SetupTestUsers {
     User user = new User("Hans", "test1");
     User admin = new User("admin", "test2");
     User both = new User("user_admin", "test3");
+
+
     Customer customer = new Customer("Simen@Lukas", "Hyggersig");
+    Goal goal = new Goal(5, "1-05-2022");
+    Goal goal2 = new Goal(10, "1-06-2022");
+
+    CustomerCourses cc = new CustomerCourses(goal);
+    CustomerCourses cc2 = new CustomerCourses(goal2);
+    CustomerCourses cc3 = new CustomerCourses();
+
+
+
+
 
     if(admin.getUserPass().equals("test")||user.getUserPass().equals("test")||both.getUserPass().equals("test"))
       throw new UnsupportedOperationException("You have not changed the passwords");
@@ -42,6 +52,12 @@ public class SetupTestUsers {
     em.persist(admin);
     em.persist(both);
     em.persist(customer);
+    em.persist(cc);
+    em.persist(cc2);
+    em.persist(cc3);
+    cc.setCustomer(customer);
+    cc3.setCustomer(customer);
+    cc2.setCustomer(customer);
     em.getTransaction().commit();
     System.out.println("PW: " + user.getUserPass());
     System.out.println("Testing user with OK password: " + user.verifyPassword("test"));

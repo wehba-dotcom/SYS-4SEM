@@ -1,6 +1,8 @@
 package entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "customer")
@@ -14,15 +16,28 @@ public class Customer
     private String email;
     private String password;
 
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.PERSIST)
+    private List<CustomerCourses> cc;
+
     public Customer()
     {
     }
+
 
     public Customer(String email, String password)
     {
         this.email = email;
         this.password = password;
     }
+
+    public Customer(String email, String password, List<CustomerCourses> cc)
+    {
+        this.email = email;
+        this.password = password;
+        this.cc = new ArrayList<>();
+    }
+
 
     public Integer getId()
     {
@@ -57,5 +72,15 @@ public class Customer
     public void setPassword(String password)
     {
         this.password = password;
+    }
+
+    public List<CustomerCourses> getCc()
+    {
+        return cc;
+    }
+
+    public void setCc(List<CustomerCourses> cc)
+    {
+        this.cc = cc;
     }
 }
