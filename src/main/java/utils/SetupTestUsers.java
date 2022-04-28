@@ -1,6 +1,7 @@
 package utils;
 
 
+import entities.Customer;
 import entities.Role;
 import entities.User;
 
@@ -23,6 +24,7 @@ public class SetupTestUsers {
     User user = new User("Hans", "test1");
     User admin = new User("admin", "test2");
     User both = new User("user_admin", "test3");
+    Customer customer = new Customer("Simen@Lukas", "Hyggersig");
 
     if(admin.getUserPass().equals("test")||user.getUserPass().equals("test")||both.getUserPass().equals("test"))
       throw new UnsupportedOperationException("You have not changed the passwords");
@@ -39,6 +41,7 @@ public class SetupTestUsers {
     em.persist(user);
     em.persist(admin);
     em.persist(both);
+    em.persist(customer);
     em.getTransaction().commit();
     System.out.println("PW: " + user.getUserPass());
     System.out.println("Testing user with OK password: " + user.verifyPassword("test"));
