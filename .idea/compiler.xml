@@ -10,6 +10,7 @@
         <module name="Startcode_Backend" />
         <module name="CA2Part2_backend" />
         <module name="CA3_Backend" />
+        <module name="SYS-4SEM" />
       </profile>
     </annotationProcessing>
   </component>
@@ -17,6 +18,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="CA2Part2_backend" options="-endorseddirs &quot;C:\Users\Razer\Desktop\startcode fix\CA2Part2_backend\target/endorsed&quot;" />
       <module name="CA3_Backend" options="-endorseddirs &quot;C:\Users\Razer\Documents\School\3 Semester\CA3\CA3_Frontend2\CA3_Backend\target/endorsed&quot;" />
+      <module name="SYS-4SEM" options="-endorseddirs C:\Users\Renea\Desktop\SYS-4SEM\target/endorsed" />
       <module name="Startcode_Backend" options="-endorseddirs C:\Users\vaksj\OneDrive\Skrivebord\Startcode_Backend\target/endorsed" />
       <module name="devops-starter" options="-endorseddirs &quot;C:\Users\Razer\Documents\School\3 Semester\Security\SecurityDemo\target/endorsed&quot;" />
     </option>

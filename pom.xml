@@ -5,14 +5,14 @@
     <groupId>dat.sem3</groupId>
 
     <!--TODO: change artifactID to project name-->
-    <artifactId>CA3</artifactId>
+    <artifactId>TrueIntent</artifactId>
     <!-- changing the above will set our URL when deployed. ex. https://www.URL.com/artifactID -->
-    <version>1.0.1</version>
+    <version>1.0.0</version>
     <packaging>war</packaging>
 
     
 
-    <name>CA3_Project</name>
+    <name>True_Intent</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -25,7 +25,7 @@
 
         <!--TODO: add DB name below -->
 
-        <db.name>CA3</db.name>
+        <db.name>Coffee</db.name>
 
     </properties>
     
