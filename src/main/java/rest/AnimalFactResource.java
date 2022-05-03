@@ -6,17 +6,13 @@ import dtos.AnimalFactDTO;
 import facades.*;
 import utils.EMF_Creator;
 
-import javax.annotation.security.RolesAllowed;
 import javax.persistence.EntityManagerFactory;
 import javax.ws.rs.*;
-import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.SecurityContext;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-@Path("animalfact")
 public class AnimalFactResource {
 
 
@@ -34,7 +30,6 @@ public class AnimalFactResource {
 
     }
 
-    @Path("count")
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public String getRenameMeCount() {
@@ -43,7 +38,6 @@ public class AnimalFactResource {
         return "{\"count\":"+count+"}";  //Done manually so no need for a DTO
     }
 
-    @Path("dog")
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public Response getDogFact() throws ExecutionException, InterruptedException {
@@ -51,7 +45,6 @@ public class AnimalFactResource {
         return Response.ok().entity(GSON.toJson(ANIMAL_FACT_FACADE.getAnimalFact("dog"))).build();
     }
 
-    @Path("fox")
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public Response getFoxFact() throws ExecutionException, InterruptedException {
@@ -59,7 +52,6 @@ public class AnimalFactResource {
       return Response.ok().entity(GSON.toJson(ANIMAL_FACT_FACADE.getAnimalFact("fox"))).build();
     }
 
-    @Path("koala")
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public Response getKoalaFact() throws ExecutionException, InterruptedException {
@@ -67,7 +59,6 @@ public class AnimalFactResource {
         return Response.ok().entity(GSON.toJson(ANIMAL_FACT_FACADE.getAnimalFact("koala"))).build();
     }
 
-    @Path("cat")
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public Response getCatFact() throws ExecutionException, InterruptedException {
@@ -75,7 +66,6 @@ public class AnimalFactResource {
         return Response.ok().entity(GSON.toJson(ANIMAL_FACT_FACADE.getAnimalFact("cat"))).build();
     }
 
-    @Path("random")
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public Response getRandomFact() throws ExecutionException, InterruptedException {
@@ -83,7 +73,6 @@ public class AnimalFactResource {
         return Response.ok().entity(GSON.toJson(ANIMAL_FACT_FACADE.getAnimalFact("random"))).build();
     }
 
-    @Path("facthistory/save/{user}")
     @POST
     @Consumes({MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_JSON})
@@ -94,7 +83,6 @@ public class AnimalFactResource {
         return Response.ok().entity(GSON.toJson(animalFactDTO)).build();
     }
 
-    @Path("facthistory/{user}")
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public Response factHistory(@PathParam("user")String user){
@@ -106,7 +94,6 @@ public class AnimalFactResource {
     }
 
 
-    @Path("savefact/save/{user}")
     @POST
     @Consumes({MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_JSON})
@@ -117,7 +104,6 @@ public class AnimalFactResource {
         return Response.ok().entity(GSON.toJson(animalFactDTO)).build();
     }
 
-    @Path("savefact/{user}")
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public Response savedFacts(@PathParam("user")String user){
