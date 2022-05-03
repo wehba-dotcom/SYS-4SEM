@@ -18,7 +18,7 @@ public class Customer
 
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.PERSIST)
-    private List<CustomerCourses> cc;
+    private transient List<CustomerCourses> cc;
 
     public Customer()
     {
