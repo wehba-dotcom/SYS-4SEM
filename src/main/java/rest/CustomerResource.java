@@ -9,10 +9,7 @@ import facades.CustomerFacade;
 import utils.EMF_Creator;
 
 import javax.persistence.EntityManagerFactory;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
@@ -48,5 +45,20 @@ public class CustomerResource
     {
         List<CustomerCoursesDTO> customerCoursesDTOList = customerFacade.getCustomerCourses(id);
         return Response.ok().entity(GSON.toJson(customerCoursesDTOList)).build();
+    }
+
+    @POST
+    @Path("setgoal/{id}")
+    @Produces({MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_JSON})
+    public Response setGoalToCustomerCourse(@PathParam("id")int id, String cg)
+    {
+
+        GoalDTO goalDTO = GSON.fromJson(cg, GoalDTO.class);
+        String result = customerFacade.createGoalOnCustomerCourse(goalDTO, id);
+        return Response.ok().entity(result).build();
+
+
+
     }
 }

@@ -1,5 +1,7 @@
 package entities;
 
+import dtos.GoalDTO;
+
 import javax.persistence.*;
 
 @Entity
@@ -18,7 +20,13 @@ public class Goal
     {
     }
 
-    public Goal( int answersWrong, String finishDate)
+    public Goal(GoalDTO goalDTO)
+    {
+        this.answersWrong = goalDTO.getDto_answersWrong();
+        this.finishDate = goalDTO.getDto_finishDate();
+    }
+
+    public Goal(int answersWrong, String finishDate)
     {
         this.answersWrong = answersWrong;
         this.finishDate = finishDate;
