@@ -10,6 +10,10 @@ public class CustomerCoursesDTO
     private Goal dto_goal;
     private Customer dto_Customer;
 
+    public CustomerCoursesDTO()
+    {
+    }
+
     public CustomerCoursesDTO(int dto_cCID, Goal dto_goal, Customer dto_Customer)
     {
         this.dto_cCID = dto_cCID;

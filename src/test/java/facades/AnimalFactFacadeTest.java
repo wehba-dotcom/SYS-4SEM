@@ -45,7 +45,7 @@ class AnimalFactFacadeTest {
 
             //Delete existing users and roles to get a "fresh" database
             em.createNamedQuery("User.deleteAllRows").executeUpdate();
-           em.createNamedQuery("AnimalFact.deleteAllRows").executeUpdate();
+            em.createNamedQuery("AnimalFact.deleteAllRows").executeUpdate();
             em.createQuery("delete from Role").executeUpdate();
 
             Role userRole = new Role("user");

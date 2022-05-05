@@ -6,6 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "customer")
+@NamedQuery(name = "customer.deleteAllRows", query = "DELETE from Customer")
 public class Customer
 {
     @Id

@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "customer_courses")
+@NamedQuery(name = "customer_courses.deleteAllRows", query = "DELETE from CustomerCourses")
 public class CustomerCourses
 {
     @Id
