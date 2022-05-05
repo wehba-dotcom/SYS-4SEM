@@ -18,7 +18,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="CA2Part2_backend" options="-endorseddirs &quot;C:\Users\Razer\Desktop\startcode fix\CA2Part2_backend\target/endorsed&quot;" />
       <module name="CA3_Backend" options="-endorseddirs &quot;C:\Users\Razer\Documents\School\3 Semester\CA3\CA3_Frontend2\CA3_Backend\target/endorsed&quot;" />
-      <module name="SYS-4SEM" options="-endorseddirs C:\Users\Renea\Desktop\SYS-4SEM\target/endorsed" />
+      <module name="SYS-4SEM" options="-endorseddirs &quot;C:\Users\vaksj\OneDrive\Skrivebord\Dat\SYS\SYS - kode\SYS-4SEM\target/endorsed&quot;" />
       <module name="Startcode_Backend" options="-endorseddirs C:\Users\vaksj\OneDrive\Skrivebord\Startcode_Backend\target/endorsed" />
       <module name="devops-starter" options="-endorseddirs &quot;C:\Users\Razer\Documents\School\3 Semester\Security\SecurityDemo\target/endorsed&quot;" />
     </option>

@@ -1,0 +1,37 @@
+@startuml
+class Customer{
+}
+
+object Login
+object Admin
+object Single_Course_Licence
+object Full_Course_Licence
+object Course
+object Certificate
+object Material
+object License
+object Curriculum
+object ListOfCourses
+object Goal
+object CustomerCourses
+
+CustomerCourses -down-o Customer
+CustomerCourses o-left- Goal
+ListOfCourses -down-o Course
+Customer o-down- License
+Customer o-left- Certificate
+Course -left-o Customer
+
+
+License <|-down- Single_Course_Licence
+License <|-down-  Full_Course_Licence
+
+Course <|-right- Material
+
+License -right- Admin
+Certificate -right- Admin
+Curriculum -down- Admin
+Material o-down- Curriculum
+Course o-down- Curriculum
+
+@enduml

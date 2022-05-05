@@ -1,0 +1,37 @@
+@startuml
+
+actor       Customer       as customer
+boundary    Homepage    as homepage
+control     displayLicensePage     as displayLicensePage
+boundary    LicensePage    as LicensePage
+control     displayCheckoutPage   as displayCheckoutPage
+boundary      CheckoutPage     as CheckoutPage
+control     chooseMobilepay as chooseMobilepay
+boundary Checkout as Checkout
+control paymentValid as paymentValid
+control getLicense as getLicense
+boundary License as License
+control activateLicense as activateLicense
+control displayMyPage as displayMyPage
+boundary MyPage as MyPage
+
+customer -> homepage:
+homepage -> displayLicensePage : "clicks licensePage"
+displayLicensePage -> LicensePage : clicks buy license
+LicensePage -> displayCheckoutPage :
+displayCheckoutPage-> CheckoutPage :
+CheckoutPage -> chooseMobilepay:
+chooseMobilepay-> Checkout :
+Checkout -> paymentValid : clicks buy order
+OPT optional workflow
+ paymentValid -> MyPage : yes
+end
+
+ALT  alternative workflow
+paymentValid -> CheckoutPage : no, if payment fails
+end
+
+
+
+
+@enduml
