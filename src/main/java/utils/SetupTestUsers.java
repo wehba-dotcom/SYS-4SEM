@@ -24,12 +24,12 @@ public class SetupTestUsers {
     User both = new User("user_admin", "test3");
 
 
-    Customer customer = new Customer("Simen@Lukas", "Hyggersig");
+    Customer customer = new Customer("Simon@Lukas", "HejMedDig");
     Goal goal = new Goal(5, "1-05-2022");
     Goal goal2 = new Goal(10, "1-06-2022");
 
-    CustomerCourses cc = new CustomerCourses(goal);
-    CustomerCourses cc2 = new CustomerCourses(goal2);
+    CustomerCourses cc = new CustomerCourses("Cappuchino",goal);
+    CustomerCourses cc2 = new CustomerCourses("Caffé-latte", goal2);
     CustomerCourses cc3 = new CustomerCourses();
 
 

@@ -12,6 +12,7 @@ public class CustomerCourses
     @SequenceGenerator(name = "CustomerCourses_SEQ")
     @Column(name = "id", nullable = false)
     private int id;
+    private String title;
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "goal_id")
     private Goal goal;
@@ -35,6 +36,13 @@ public class CustomerCourses
     {
     }
 
+    public CustomerCourses(String title, Goal goal)
+    {
+        this.title = title;
+        this.goal = goal;
+
+    }
+
     public CustomerCourses(Goal goal)
     {
         this.goal = goal;
@@ -44,6 +52,16 @@ public class CustomerCourses
     {
         this.goal = goal;
         this.customer = customer;
+    }
+
+    public String getTitle()
+    {
+        return title;
+    }
+
+    public void setTitle(String title)
+    {
+        this.title = title;
     }
 
     public int getId()
