@@ -31,10 +31,7 @@ public class SetupTestUsers {
     CustomerCourses cc = new CustomerCourses("Cappuccino");
     CustomerCourses cc2 = new CustomerCourses("Caffe-latte");
     CustomerCourses cc3 = new CustomerCourses("Moccachino");
-
-
-
-
+    
 
     if(admin.getUserPass().equals("test")||user.getUserPass().equals("test")||both.getUserPass().equals("test"))
       throw new UnsupportedOperationException("You have not changed the passwords");

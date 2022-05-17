@@ -42,32 +42,6 @@ public class User implements Serializable {
         return rolesAsStrings;
     }
 
-    @JoinTable(name = "factHistory")
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.EAGER)
-    private List<AnimalFact> factHistory;
-
-
-    public List<AnimalFact> getFactHistory() {
-        return factHistory;
-    }
-
-    @JoinTable(name = "savedFacts")
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.EAGER)
-    private List<AnimalFact> savedFacts;
-
-    public List<AnimalFact> getSavedFacts() {
-        return savedFacts;
-    }
-
-    public void setSavedFacts(List<AnimalFact> savedFacts) {
-        this.savedFacts = savedFacts;
-    }
-
-    public void addFactToSavedFacts(AnimalFact animalFact) {
-
-        savedFacts.add(animalFact);
-
-    }
 
     public User() {
     }
@@ -93,11 +67,7 @@ public class User implements Serializable {
 
     }
 
-    public User(String userName, String userPass, List<AnimalFact> factHistory) {
-        this.userName = userName;
-        this.userPass = userPass;
-        this.factHistory = factHistory;
-    }
+
 
     public String getUserName() {
         return userName;
@@ -128,16 +98,6 @@ public class User implements Serializable {
     }
 
 
-    public void setFactHistory(List<AnimalFact> factHistory) {
-        this.factHistory = factHistory;
-    }
-
-    public void addFactToHistory(AnimalFact animalFact) {
-
-        factHistory.add(animalFact);
-
-    }
-
 
     @Override
     public String toString() {
@@ -145,7 +105,6 @@ public class User implements Serializable {
                 "userName='" + userName + '\'' +
                 ", userPass='" + userPass + '\'' +
                 ", roleList=" + roleList +
-                ", factHistory=" + factHistory +
                 '}';
     }
 }

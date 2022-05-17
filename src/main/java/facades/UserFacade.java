@@ -1,17 +1,12 @@
 package facades;
 
 import dtos.UserDTO;
-import entities.AnimalFact;
 import entities.Role;
 import entities.User;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.Query;
-import javax.persistence.TypedQuery;
 
 import security.errorhandling.AuthenticationException;
-
-import java.util.List;
 
 /**
  * @author lam@cphbusiness.dk
