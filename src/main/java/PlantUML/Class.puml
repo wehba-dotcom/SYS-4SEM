@@ -1,0 +1,109 @@
+@startuml
+
+
+
+object Curriculum
+object CustomerCourses
+
+class Admin {
+-Id: int
+-email: String
+-password: String
+
+}
+
+class CourseLinkCustomer {
+-customerId: int
+-courseId: int
+}
+
+class CertificateLinkCustomer {
+-customerId: int
+-certificateId: int
+}
+
+
+class LicenseLinkCustomer {
+-customerId: int
+-licenseId: int
+}
+
+class Certificate{
+-id: int
+-name String
+-Date date
+- approvelStamp String
+}
+
+class License{
+- id: int
+- startDate: Date
+- endDate: Date
+-singleCourseLicence: int
+-fullCourseLicence: int
+}
+
+class Material{
+-id: int
+-name: String
+-desc: String
+-courses: List<>
+}
+
+class Course{
+-id: int
+-name: String
+-curriculum: String
+-material: Material
+}
+
+class Goal{
+-answersWrong: int
+-finishDate: String
+}
+
+class Customer{
+-id: int
+-email: String
+-password: String
+-courses: List<>
+-license: List<>
+-goal: Goal
+-certificate: Certificate
+
+}
+
+class CustomerFacade{
++ List<> setGoal(Goal goal)
++ List <> showMyGoals (List <Goals> MyGoalsList>)
++ String showGoalsByCourse (Goal goal))
++ List<> showAllCourses(List<Courses> coursesList)
++ List<> showAllCoursesByName(List<Courses> coursesList)
++ int setLicenseToCustomer(License licence)
++ List setCoursesOnCustomer(Course course)
++ List<> showAllLicense(List<License> licenseList)
++ List<> showMyLicenses (List<License> MylicenseList))
++ List<> showMyCourses (List<Courses> MyCoursesList))
++ List<> showMyCertificates (List<Certificate> MyCertificateList))
+}
+
+
+CustomerCourses -down- Customer
+CustomerCourses -left- Goal
+Customer "1" -- "*" LicenseLinkCustomer
+License "1" - "*" LicenseLinkCustomer
+Customer "1" -left- "*" CertificateLinkCustomer
+CertificateLinkCustomer "*" -left- "1" Certificate
+Course "1" -left- "*" CourseLinkCustomer
+Customer "1" -- "*" CourseLinkCustomer
+
+
+
+
+Course "1" -right- "1" Material
+License -right- Admin
+Certificate -right- Admin
+Curriculum -down- Admin
+Material -down- Curriculum
+Course  -down-  Curriculum
+@enduml
