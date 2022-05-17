@@ -18,7 +18,7 @@ public class Customer
     private String password;
 
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private transient List<CustomerCourses> cc;
 
     public Customer()

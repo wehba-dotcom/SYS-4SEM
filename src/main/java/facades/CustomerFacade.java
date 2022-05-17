@@ -59,18 +59,20 @@ public class CustomerFacade
         return customerCoursesDTOList;
     }
 
+
     public String createGoalOnCustomerCourse(GoalDTO goalDTO, int id)
     {
         EntityManager em = getEntityManager();
         CustomerCourses cc = em.find(CustomerCourses.class, id);
         Goal goal = new Goal(goalDTO);
+
         cc.setGoal(goal);
 
         em.getTransaction().begin();
         em.persist(cc);
         em.getTransaction().commit();
 
-       return "Goal er oprettet";
+        return "Goal er oprettet";
 
     }
 

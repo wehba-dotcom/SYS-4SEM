@@ -28,9 +28,9 @@ public class SetupTestUsers {
     Goal goal = new Goal(5, "1-05-2022");
     Goal goal2 = new Goal(10, "1-06-2022");
 
-    CustomerCourses cc = new CustomerCourses("Cappuchino",goal);
-    CustomerCourses cc2 = new CustomerCourses("Caffé-latte", goal2);
-    CustomerCourses cc3 = new CustomerCourses();
+    CustomerCourses cc = new CustomerCourses("Cappuccino");
+    CustomerCourses cc2 = new CustomerCourses("Caffe-latte");
+    CustomerCourses cc3 = new CustomerCourses("Moccachino");
 
 
 

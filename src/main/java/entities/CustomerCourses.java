@@ -13,7 +13,7 @@ public class CustomerCourses
     @Column(name = "id", nullable = false)
     private int id;
     private String title;
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "goal_id")
     private Goal goal;
 
@@ -41,6 +41,11 @@ public class CustomerCourses
         this.title = title;
         this.goal = goal;
 
+    }
+
+    public CustomerCourses(String title)
+    {
+        this.title = title;
     }
 
     public CustomerCourses(Goal goal)
