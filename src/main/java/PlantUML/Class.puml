@@ -3,13 +3,15 @@
 
 
 object Curriculum
-object CustomerCourses
-
+class CustomerCourses {
+-id: int
+-String: Title
+ -goal: Goal
+ }
 class Admin {
 -Id: int
 -email: String
 -password: String
-
 }
 
 class CourseLinkCustomer {
@@ -32,7 +34,7 @@ class Certificate{
 -id: int
 -name String
 -Date date
-- approvelStamp String
+- approvalStamp String
 }
 
 class License{
@@ -58,6 +60,7 @@ class Course{
 }
 
 class Goal{
+-id: int
 -answersWrong: int
 -finishDate: String
 }
